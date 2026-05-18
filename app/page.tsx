@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
@@ -28,38 +30,60 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <section className="flex flex-col items-center justify-center text-center px-8 py-32 border-b border-white/10">
-        <p className="text-[#1a56db] uppercase tracking-widest text-sm font-semibold mb-4">
-          Black Belt | IBJJF Champion
-        </p>
-        <h1 className="text-5xl sm:text-7xl font-bold tracking-tight mb-6">
-          Cesar Gonzalez <br /> Zamora
-        </h1>
-        <p className="text-white/60 text-lg max-w-xl mb-10">
-          USAF Jiu-Jitsu Ambassador. Multiple IBJJF Open Champion. Pan Ams Gi
-          Vice-Champion 2026. Training out of RP BJJ Boerne.
-        </p>
-        <div className="flex gap-4">
-          <a
-            href="/book"
-            className="bg-[#1a56db] hover:bg-[#1e40af] text-white px-8 py-3 rounded-full font-medium transition-colors"
-          >
-            Book a Session
-          </a>
-          <a
-            href="/instructionals"
-            className="border border-white/20 hover:border-white/50 text-white px-8 py-3 rounded-full font-medium transition-colors"
-          >
-            View Instructionals
-          </a>
+      {/* HERO - SIDE BY SIDE */}
+      <section className="flex flex-col-reverse sm:flex-row items-center justify-between px-8 sm:px-16 py-20 gap-12 border-b border-white/10">
+        {/* LEFT - TEXT */}
+        <div className="flex flex-col items-start gap-6 max-w-xl">
+          <p className="text-[#1a56db] uppercase tracking-widest text-sm font-semibold">
+            Learn from Experience. Train with Purpose.
+          </p>
+          <h1 className="text-5xl sm:text-6xl font-bold tracking-tight leading-tight">
+            Cesar Gonzalez <br /> Zamora
+          </h1>
+          <p className="text-white/60 text-lg leading-8">
+            USAF Jiu-Jitsu Ambassador. Multiple IBJJF Open Champion. Pan Ams Gi
+            Vice-Champion 2026. Training out of RP BJJ Boerne.
+          </p>
+          <div className="flex gap-4 flex-wrap">
+            <a
+              href="/book"
+              className="bg-[#1a56db] hover:bg-[#1e40af] text-white px-8 py-3 rounded-full font-medium transition-colors"
+            >
+              Book a Session
+            </a>
+            <a
+              href="/instructionals"
+              className="border border-white/20 hover:border-white/50 text-white px-8 py-3 rounded-full font-medium transition-colors"
+            >
+              View Instructionals
+            </a>
+          </div>
+        </div>
+
+        {/* RIGHT - PHOTO */}
+        <div className="relative w-full sm:w-[420px] h-[500px] rounded-2xl overflow-hidden flex-shrink-0">
+          <Image
+            src="/images/Cesar.JPG"
+            alt="Cesar Gonzalez Zamora - BJJ Champion"
+            fill
+            className="object-cover object-top"
+            priority
+          />
         </div>
       </section>
 
       {/* ACHIEVEMENTS */}
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10 border-b border-white/10">
+      <section className="grid grid-cols-1 sm:grid-cols-4 gap-px bg-white/10 border-b border-white/10">
         <div className="bg-black flex flex-col items-center justify-center py-16 px-8 text-center">
-          <span className="text-4xl font-bold text-[#1a56db] mb-2">
+          <span className="text-3xl font-bold text-[#1a56db] mb-2">
+            Ranked #1
+          </span>
+          <span className="text-white/60 text-sm uppercase tracking-widest">
+            IBJJF Gi & No-Gi
+          </span>
+        </div>
+        <div className="bg-black flex flex-col items-center justify-center py-16 px-8 text-center">
+          <span className="text-3xl font-bold text-[#1a56db] mb-2">
             Multiple x
           </span>
           <span className="text-white/60 text-sm uppercase tracking-widest">
@@ -67,7 +91,7 @@ export default function Home() {
           </span>
         </div>
         <div className="bg-black flex flex-col items-center justify-center py-16 px-8 text-center">
-          <span className="text-4xl font-bold text-[#1a56db] mb-2">
+          <span className="text-3xl font-bold text-[#1a56db] mb-2">
             Vice-Champion
           </span>
           <span className="text-white/60 text-sm uppercase tracking-widest">
@@ -75,7 +99,7 @@ export default function Home() {
           </span>
         </div>
         <div className="bg-black flex flex-col items-center justify-center py-16 px-8 text-center">
-          <span className="text-4xl font-bold text-[#1a56db] mb-2">Bronze</span>
+          <span className="text-3xl font-bold text-[#1a56db] mb-2">Bronze</span>
           <span className="text-white/60 text-sm uppercase tracking-widest">
             Pan Ams Gi & No-Gi 2024
           </span>
@@ -90,7 +114,7 @@ export default function Home() {
           USAF Jiu-Jitsu Ambassador competing with RP BJJ Boerne and sponsored
           by Gameness Sports. Whether you are looking to compete at the highest
           level or start your BJJ journey, Cesar brings championship-level
-          insight to every session.
+          insight to every session. All levels welcome.
         </p>
         <a
           href="/about"

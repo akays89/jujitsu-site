@@ -158,7 +158,64 @@ export default function Home() {
           ))}
         </div>
       </section>
-
+      {/* PHOTO GALLERY */}
+      <section className="px-6 sm:px-16 py-16 border-b border-white/10">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
+          On The Mat
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="relative h-[300px] rounded-2xl overflow-hidden group">
+            <Image
+              src="/images/Cesar_5.jpg"
+              alt="Cesar competing on the mat"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              style={{ objectPosition: "20% center" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <p className="absolute bottom-4 left-4 text-xs font-medium text-white/80 uppercase tracking-widest">
+              In Action
+            </p>
+          </div>
+          <div className="relative h-[300px] rounded-2xl overflow-hidden group">
+            <Image
+              src="/images/Cesar_4.jpg"
+              alt="Cesar hand raised at competition"
+              fill
+              className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <p className="absolute bottom-4 left-4 text-xs font-medium text-white/80 uppercase tracking-widest">
+              Victory
+            </p>
+          </div>
+          <div className="relative h-[300px] rounded-2xl overflow-hidden group">
+            <Image
+              src="/images/Cesar_3.jpg"
+              alt="Cesar on the podium at Dallas World League"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              style={{ objectPosition: "center 60%" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <p className="absolute bottom-4 left-4 text-xs font-medium text-white/80 uppercase tracking-widest">
+              JJ World League Dallas
+            </p>
+          </div>
+          <div className="relative h-[300px] rounded-2xl overflow-hidden group">
+            <Image
+              src="/images/Cesar_1.jpg"
+              alt="Cesar at Pan Jiu-Jitsu Championship 2026"
+              fill
+              className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <p className="absolute bottom-4 left-4 text-xs font-medium text-white/80 uppercase tracking-widest">
+              Pan Jiu-Jitsu 2026
+            </p>
+          </div>
+        </div>
+      </section>
       {/* SPONSOR STRIP */}
       <section className="flex flex-col items-center px-6 py-12 border-b border-white/10 gap-8">
         <p className="text-white/40 uppercase tracking-widest text-xs">

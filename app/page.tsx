@@ -38,8 +38,14 @@ export default function Home() {
           <p className="text-[#1a56db] uppercase tracking-widest text-sm font-semibold">
             Learn from Experience. Train with Purpose.
           </p>
-          <h1 className="text-5xl sm:text-6xl font-bold tracking-tight leading-tight">
-            Cesar Gonzalez <br /> Zamora
+          <h1
+            className="text-5xl sm:text-6xl font-bold tracking-tight leading-tight whitespace-nowrap"
+            style={{
+              textShadow:
+                "0 0 20px rgba(26, 86, 219, 1), 0 0 60px rgba(26, 86, 219, 0.8), 0 0 100px rgba(26, 86, 219, 0.5)",
+            }}
+          >
+            Cesar Gonzalez Zamora
           </h1>
           <p className="text-white/60 text-lg leading-8">
             USAF Jiu-Jitsu Ambassador. Multiple IBJJF Open Champion. Pan Ams Gi
@@ -62,7 +68,14 @@ export default function Home() {
         </div>
 
         {/* RIGHT - PHOTO */}
-        <div className="relative w-full sm:w-[420px] h-[500px] rounded-2xl overflow-hidden flex-shrink-0">
+        <div
+          className="relative w-full sm:w-[420px] h-[500px] rounded-2xl overflow-hidden flex-shrink-0"
+          style={{
+            boxShadow:
+              "0 0 30px rgba(26, 86, 219, 0.5), 0 0 60px rgba(26, 86, 219, 0.2)",
+            border: "1px solid rgba(26, 86, 219, 0.4)",
+          }}
+        >
           <Image
             src="/images/Cesar.JPG"
             alt="Cesar Gonzalez Zamora - BJJ Champion"

@@ -248,6 +248,19 @@ export default function Home() {
               className="object-contain"
             />
           </a>
+          <a
+            href="https://1stphorm.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative h-28 w-28 opacity-70 hover:opacity-100 transition-opacity"
+          >
+            <Image
+              src="/images/1stphorm.png"
+              alt="1st Phorm"
+              fill
+              className="object-contain"
+            />
+          </a>
         </div>
       </section>
 

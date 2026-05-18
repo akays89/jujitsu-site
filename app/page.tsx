@@ -149,7 +149,7 @@ export default function Home() {
           ].map((card) => (
             <div
               key={card.title}
-              className="flex flex-col gap-4 bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-[#1a56db]/50 transition-colors"
+              className="flex flex-col gap-4 bg-white/5 border border-[#1a56db]/30 rounded-2xl p-8 transition-colors"
             >
               {card.icon}
               <h3 className="text-xl font-bold">{card.title}</h3>

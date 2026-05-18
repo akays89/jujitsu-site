@@ -5,11 +5,11 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
       {/* NAVBAR */}
-      <nav className="flex items-center justify-between px-8 py-5 border-b border-white/10">
-        <span className="text-xl font-bold tracking-tight text-white">
+      <nav className="flex items-center justify-between px-6 py-5 border-b border-white/10">
+        <span className="text-sm sm:text-xl font-bold tracking-tight text-white">
           Cesar Gonzalez Zamora
         </span>
-        <div className="flex items-center gap-8 text-sm font-medium text-white/70">
+        <div className="hidden sm:flex items-center gap-8 text-sm font-medium text-white/70">
           <a href="/about" className="hover:text-white transition-colors">
             About
           </a>
@@ -29,17 +29,42 @@ export default function Home() {
             Book Now
           </a>
         </div>
+        {/* MOBILE NAV */}
+        <a
+          href="/book"
+          className="sm:hidden bg-[#1a56db] text-white px-4 py-2 rounded-full text-sm font-medium"
+        >
+          Book Now
+        </a>
       </nav>
 
       {/* HERO - SIDE BY SIDE */}
-      <section className="flex flex-col-reverse sm:flex-row items-center justify-between px-8 sm:px-16 py-20 gap-12 border-b border-white/10">
-        {/* LEFT - TEXT */}
-        <div className="flex flex-col items-start gap-6 max-w-xl">
-          <p className="text-[#1a56db] uppercase tracking-widest text-sm font-semibold">
+      <section className="flex flex-col sm:flex-row items-center justify-between px-6 sm:px-16 py-12 sm:py-20 gap-10 border-b border-white/10">
+        {/* TOP ON MOBILE - PHOTO */}
+        <div
+          className="relative w-full sm:w-[420px] h-[350px] sm:h-[500px] rounded-2xl overflow-hidden flex-shrink-0 order-first sm:order-last"
+          style={{
+            boxShadow:
+              "0 0 30px rgba(26, 86, 219, 0.5), 0 0 60px rgba(26, 86, 219, 0.2)",
+            border: "1px solid rgba(26, 86, 219, 0.4)",
+          }}
+        >
+          <Image
+            src="/images/Cesar.JPG"
+            alt="Cesar Gonzalez Zamora - BJJ Champion"
+            fill
+            className="object-cover object-top"
+            priority
+          />
+        </div>
+
+        {/* TEXT */}
+        <div className="flex flex-col items-start gap-6 max-w-xl w-full">
+          <p className="text-[#1a56db] uppercase tracking-widest text-xs sm:text-sm font-semibold">
             Learn from Experience. Train with Purpose.
           </p>
           <h1
-            className="text-5xl sm:text-6xl font-bold tracking-tight leading-tight whitespace-nowrap"
+            className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight"
             style={{
               textShadow:
                 "0 0 20px rgba(26, 86, 219, 1), 0 0 60px rgba(26, 86, 219, 0.8), 0 0 100px rgba(26, 86, 219, 0.5)",
@@ -47,7 +72,7 @@ export default function Home() {
           >
             Cesar Gonzalez Zamora
           </h1>
-          <p className="text-white/60 text-lg leading-8">
+          <p className="text-white/60 text-base sm:text-lg leading-8">
             USAF Jiu-Jitsu Ambassador. Multiple IBJJF Open Champion. Pan Ams Gi
             Vice-Champion 2026. Training out of RP BJJ Boerne.
           </p>
@@ -66,64 +91,50 @@ export default function Home() {
             </a>
           </div>
         </div>
-
-        {/* RIGHT - PHOTO */}
-        <div
-          className="relative w-full sm:w-[420px] h-[500px] rounded-2xl overflow-hidden flex-shrink-0"
-          style={{
-            boxShadow:
-              "0 0 30px rgba(26, 86, 219, 0.5), 0 0 60px rgba(26, 86, 219, 0.2)",
-            border: "1px solid rgba(26, 86, 219, 0.4)",
-          }}
-        >
-          <Image
-            src="/images/Cesar.JPG"
-            alt="Cesar Gonzalez Zamora - BJJ Champion"
-            fill
-            className="object-cover object-top"
-            priority
-          />
-        </div>
       </section>
 
       {/* ACHIEVEMENTS */}
-      <section className="grid grid-cols-1 sm:grid-cols-4 gap-px bg-white/10 border-b border-white/10">
-        <div className="bg-black flex flex-col items-center justify-center py-16 px-8 text-center">
-          <span className="text-3xl font-bold text-[#1a56db] mb-2">
+      <section className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 border-b border-white/10">
+        <div className="bg-black flex flex-col items-center justify-center py-10 sm:py-16 px-4 text-center">
+          <span className="text-2xl sm:text-3xl font-bold text-[#1a56db] mb-2">
             Ranked #1
           </span>
-          <span className="text-white/60 text-sm uppercase tracking-widest">
+          <span className="text-white/60 text-xs uppercase tracking-widest">
             IBJJF Gi & No-Gi
           </span>
         </div>
-        <div className="bg-black flex flex-col items-center justify-center py-16 px-8 text-center">
-          <span className="text-3xl font-bold text-[#1a56db] mb-2">
+        <div className="bg-black flex flex-col items-center justify-center py-10 sm:py-16 px-4 text-center">
+          <span className="text-2xl sm:text-3xl font-bold text-[#1a56db] mb-2">
             Multiple x
           </span>
-          <span className="text-white/60 text-sm uppercase tracking-widest">
+          <span className="text-white/60 text-xs uppercase tracking-widest">
             IBJJF Open Champion
           </span>
         </div>
-        <div className="bg-black flex flex-col items-center justify-center py-16 px-8 text-center">
-          <span className="text-3xl font-bold text-[#1a56db] mb-2">
+        <div className="bg-black flex flex-col items-center justify-center py-10 sm:py-16 px-4 text-center">
+          <span className="text-2xl sm:text-3xl font-bold text-[#1a56db] mb-2">
             Vice-Champion
           </span>
-          <span className="text-white/60 text-sm uppercase tracking-widest">
+          <span className="text-white/60 text-xs uppercase tracking-widest">
             Pan Ams Gi 2026
           </span>
         </div>
-        <div className="bg-black flex flex-col items-center justify-center py-16 px-8 text-center">
-          <span className="text-3xl font-bold text-[#1a56db] mb-2">Bronze</span>
-          <span className="text-white/60 text-sm uppercase tracking-widest">
+        <div className="bg-black flex flex-col items-center justify-center py-10 sm:py-16 px-4 text-center">
+          <span className="text-2xl sm:text-3xl font-bold text-[#1a56db] mb-2">
+            Bronze
+          </span>
+          <span className="text-white/60 text-xs uppercase tracking-widest">
             Pan Ams Gi & No-Gi 2024
           </span>
         </div>
       </section>
 
       {/* ABOUT SNIPPET */}
-      <section className="flex flex-col items-center text-center px-8 py-24 border-b border-white/10">
-        <h2 className="text-3xl font-bold mb-6">Train With a Champion</h2>
-        <p className="text-white/60 max-w-2xl text-lg leading-8">
+      <section className="flex flex-col items-center text-center px-6 sm:px-8 py-16 sm:py-24 border-b border-white/10">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6">
+          Train With a Champion
+        </h2>
+        <p className="text-white/60 max-w-2xl text-base sm:text-lg leading-8">
           Cesar Gonzalez Zamora is a competitive Brazilian Jiu-Jitsu athlete and
           USAF Jiu-Jitsu Ambassador competing with RP BJJ Boerne and sponsored
           by Gameness Sports. Whether you are looking to compete at the highest
@@ -139,9 +150,9 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="flex items-center justify-between px-8 py-6 text-white/40 text-sm">
+      <footer className="flex flex-col sm:flex-row items-center justify-between px-6 sm:px-8 py-6 text-white/40 text-sm gap-4">
         <span>2026 Cesar Gonzalez Zamora</span>
-        <div className="flex gap-6">
+        <div className="flex items-center gap-6">
           <a
             href="https://www.instagram.com/acai_bolo"
             target="_blank"

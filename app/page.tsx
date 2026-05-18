@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -126,8 +127,32 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="flex items-center justify-between px-8 py-6 text-white/40 text-sm">
-        <span>2025 Cesar Gonzalez Zamora</span>
+        <span>2026 Cesar Gonzalez Zamora</span>
         <div className="flex gap-6">
+          <a
+            href="https://www.instagram.com/acai_bolo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition-colors text-xl"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://www.facebook.com/cesar.i.zamora"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition-colors text-xl"
+          >
+            <FaFacebook />
+          </a>
+          <a
+            href="https://www.youtube.com/user/drizzlybadboy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition-colors text-xl"
+          >
+            <FaYoutube />
+          </a>
           <a
             href="https://www.instagram.com/rpbjj_boerne"
             target="_blank"

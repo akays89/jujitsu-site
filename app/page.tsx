@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
+import { GiBlackBelt, GiTrophy, GiBrain } from "react-icons/gi";
 
 export default function Home() {
   return (
@@ -29,7 +30,6 @@ export default function Home() {
             Book Now
           </a>
         </div>
-        {/* MOBILE NAV */}
         <a
           href="/book"
           className="sm:hidden bg-[#1a56db] text-white px-4 py-2 rounded-full text-sm font-medium"
@@ -38,28 +38,19 @@ export default function Home() {
         </a>
       </nav>
 
-      {/* HERO - SIDE BY SIDE */}
-      <section className="flex flex-col sm:flex-row items-center justify-between px-6 sm:px-16 py-12 sm:py-20 gap-10 border-b border-white/10">
-        {/* TOP ON MOBILE - PHOTO */}
+      {/* HERO */}
+      <section className="relative flex flex-col sm:flex-row items-center justify-between px-6 sm:px-16 py-12 sm:py-20 gap-10 border-b border-white/10 overflow-hidden">
+        {/* BACKGROUND GLOW */}
         <div
-          className="relative w-full sm:w-[420px] h-[350px] sm:h-[500px] rounded-2xl overflow-hidden flex-shrink-0 order-first sm:order-last"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            boxShadow:
-              "0 0 30px rgba(26, 86, 219, 0.5), 0 0 60px rgba(26, 86, 219, 0.2)",
-            border: "1px solid rgba(26, 86, 219, 0.4)",
+            background:
+              "radial-gradient(ellipse at 60% 50%, rgba(26, 86, 219, 0.15) 0%, transparent 70%)",
           }}
-        >
-          <Image
-            src="/images/Cesar.JPG"
-            alt="Cesar Gonzalez Zamora - BJJ Champion"
-            fill
-            className="object-cover object-top"
-            priority
-          />
-        </div>
+        />
 
         {/* TEXT */}
-        <div className="flex flex-col items-start gap-6 max-w-xl w-full">
+        <div className="flex flex-col items-start gap-6 max-w-xl w-full z-10">
           <p className="text-[#1a56db] uppercase tracking-widest text-xs sm:text-sm font-semibold">
             Learn from Experience. Train with Purpose.
           </p>
@@ -91,62 +82,148 @@ export default function Home() {
             </a>
           </div>
         </div>
+
+        {/* PHOTO */}
+        <div
+          className="relative w-full sm:w-[420px] h-[350px] sm:h-[500px] rounded-2xl overflow-hidden flex-shrink-0 z-10"
+          style={{
+            boxShadow:
+              "0 0 30px rgba(26, 86, 219, 0.5), 0 0 60px rgba(26, 86, 219, 0.2)",
+            border: "1px solid rgba(26, 86, 219, 0.4)",
+          }}
+        >
+          <Image
+            src="/images/Cesar.JPG"
+            alt="Cesar Gonzalez Zamora - BJJ Champion"
+            fill
+            className="object-cover object-top"
+            priority
+          />
+        </div>
       </section>
 
       {/* ACHIEVEMENTS */}
       <section className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/10 border-b border-white/10">
-        <div className="bg-black flex flex-col items-center justify-center py-10 sm:py-16 px-4 text-center">
-          <span className="text-2xl sm:text-3xl font-bold text-[#1a56db] mb-2">
-            Ranked #1
-          </span>
-          <span className="text-white/60 text-xs uppercase tracking-widest">
-            IBJJF Gi & No-Gi
-          </span>
-        </div>
-        <div className="bg-black flex flex-col items-center justify-center py-10 sm:py-16 px-4 text-center">
-          <span className="text-2xl sm:text-3xl font-bold text-[#1a56db] mb-2">
-            Multiple x
-          </span>
-          <span className="text-white/60 text-xs uppercase tracking-widest">
-            IBJJF Open Champion
-          </span>
-        </div>
-        <div className="bg-black flex flex-col items-center justify-center py-10 sm:py-16 px-4 text-center">
-          <span className="text-2xl sm:text-3xl font-bold text-[#1a56db] mb-2">
-            Vice-Champion
-          </span>
-          <span className="text-white/60 text-xs uppercase tracking-widest">
-            Pan Ams Gi 2026
-          </span>
-        </div>
-        <div className="bg-black flex flex-col items-center justify-center py-10 sm:py-16 px-4 text-center">
-          <span className="text-2xl sm:text-3xl font-bold text-[#1a56db] mb-2">
-            Bronze
-          </span>
-          <span className="text-white/60 text-xs uppercase tracking-widest">
-            Pan Ams Gi & No-Gi 2024
-          </span>
+        {[
+          { stat: "Ranked #1", label: "IBJJF Gi & No-Gi" },
+          { stat: "Multiple x", label: "IBJJF Open Champion" },
+          { stat: "Vice-Champion", label: "Pan Ams Gi 2026" },
+          { stat: "Bronze", label: "Pan Ams Gi & No-Gi 2024" },
+        ].map((item) => (
+          <div
+            key={item.label}
+            className="bg-[#080808] flex flex-col items-center justify-center py-10 sm:py-16 px-4 text-center"
+          >
+            <span className="text-2xl sm:text-3xl font-bold text-[#1a56db] mb-2">
+              {item.stat}
+            </span>
+            <span className="text-white/60 text-xs uppercase tracking-widest">
+              {item.label}
+            </span>
+          </div>
+        ))}
+      </section>
+
+      {/* ICON CARDS */}
+      <section className="px-6 sm:px-16 py-16 sm:py-24 border-b border-white/10">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
+          What You Will Learn
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {[
+            {
+              icon: <GiBlackBelt className="text-4xl text-[#1a56db]" />,
+              title: "Technique",
+              desc: "Learn precise, proven techniques that work at every level — from beginner to competitor.",
+            },
+            {
+              icon: <GiBrain className="text-4xl text-[#1a56db]" />,
+              title: "Strategy",
+              desc: "Develop smart game plans and positional awareness to outthink your opponent.",
+            },
+            {
+              icon: <GiTrophy className="text-4xl text-[#1a56db]" />,
+              title: "Confidence",
+              desc: "Build the mindset and resilience to perform your best when it matters most.",
+            },
+          ].map((card) => (
+            <div
+              key={card.title}
+              className="flex flex-col gap-4 bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-[#1a56db]/50 transition-colors"
+            >
+              {card.icon}
+              <h3 className="text-xl font-bold">{card.title}</h3>
+              <p className="text-white/60 leading-7">{card.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* ABOUT SNIPPET */}
-      <section className="flex flex-col items-center text-center px-6 sm:px-8 py-16 sm:py-24 border-b border-white/10">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-6">
-          Train With a Champion
-        </h2>
-        <p className="text-white/60 max-w-2xl text-base sm:text-lg leading-8">
-          Cesar Gonzalez Zamora is a competitive Brazilian Jiu-Jitsu athlete and
-          USAF Jiu-Jitsu Ambassador competing with RP BJJ Boerne and sponsored
-          by Gameness Sports. Whether you are looking to compete at the highest
-          level or start your BJJ journey, Cesar brings championship-level
-          insight to every session. All levels welcome.
+      {/* SPONSOR STRIP */}
+      <section className="flex flex-col items-center px-6 py-12 border-b border-white/10 gap-8">
+        <p className="text-white/40 uppercase tracking-widest text-xs">
+          Partners & Affiliations
         </p>
-        <a
-          href="/about"
-          className="mt-8 text-[#1a56db] hover:underline font-medium"
-        >
-          Learn more
-        </a>
+        <div className="flex flex-wrap items-center justify-center gap-12">
+          <a
+            href="https://gameness.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative h-12 w-40 opacity-70 hover:opacity-100 transition-opacity"
+          >
+            <Image
+              src="/images/gameness.png"
+              alt="Gameness Sports"
+              fill
+              className="object-contain invert"
+            />
+          </a>
+          <a
+            href="https://rodrigopinheirobjj.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative h-24 w-24 opacity-70 hover:opacity-100 transition-opacity"
+          >
+            <Image
+              src="/images/RPBJJ.png"
+              alt="RP BJJ Boerne"
+              fill
+              className="object-contain"
+            />
+          </a>
+        </div>
+      </section>
+
+      {/* CTA BANNER */}
+      <section
+        className="relative px-6 sm:px-16 py-16 sm:py-24 border-b border-white/10 overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, #1a56db 0%, #1e3a8a 100%)",
+        }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.05) 0%, transparent 60%)",
+          }}
+        />
+        <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8">
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3">
+              Ready to Elevate Your Game?
+            </h2>
+            <p className="text-white/70 text-lg">
+              All levels welcome. Flexible scheduling. Results driven.
+            </p>
+          </div>
+          <a
+            href="/book"
+            className="flex-shrink-0 bg-white text-[#1a56db] hover:bg-white/90 px-10 py-4 rounded-full font-bold text-lg transition-colors"
+          >
+            Book Now
+          </a>
+        </div>
       </section>
 
       {/* FOOTER */}

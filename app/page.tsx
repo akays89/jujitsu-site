@@ -55,7 +55,7 @@ export default function Home() {
       </div>
 
       {/* HERO */}
-      <section className="relative flex flex-col sm:flex-row items-center justify-center px-6 sm:px-16 gap-16 border-b border-white/10 overflow-hidden min-h-[90vh]">
+      <section className="relative flex flex-col sm:flex-row items-center justify-center px-6 sm:px-16 gap-2 sm:gap-16 border-b border-white/10 overflow-hidden py-12">
         {/* BACKGROUND GRID TEXTURE */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -99,12 +99,6 @@ export default function Home() {
               className="bg-[#1a56db] hover:bg-[#1e40af] text-white px-8 py-3 rounded-full font-medium transition-colors"
             >
               Book a Session
-            </a>
-            <a
-              href="/instructionals"
-              className="border border-white/20 hover:border-white/50 text-white px-8 py-3 rounded-full font-medium transition-colors"
-            >
-              View Instructionals
             </a>
           </div>
         </div>

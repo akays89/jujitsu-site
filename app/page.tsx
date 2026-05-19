@@ -38,19 +38,75 @@ export default function Home() {
         </a>
       </nav>
 
+      {/* TICKER */}
+      <div className="overflow-hidden bg-[#1a56db] py-4 border-y border-white/20">
+        <div
+          style={{
+            animation: "ticker 20s linear infinite",
+            display: "flex",
+            whiteSpace: "nowrap",
+            width: "max-content",
+          }}
+        >
+          {[...Array(2)].map((_, i) => (
+            <div
+              key={i}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "2rem",
+                padding: "0 2rem",
+                fontSize: "0.75rem",
+                fontWeight: 600,
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                color: "white",
+              }}
+            >
+              <span>Private Lessons Available</span>
+              <span style={{ opacity: 0.4 }}>•</span>
+              <span>All Levels Welcome</span>
+              <span style={{ opacity: 0.4 }}>•</span>
+              <span>Online & In Person</span>
+              <span style={{ opacity: 0.4 }}>•</span>
+              <span>Seminars Available</span>
+              <span style={{ opacity: 0.4 }}>•</span>
+              <span>Competition Coaching</span>
+              <span style={{ opacity: 0.4 }}>•</span>
+              <span>Flexible Scheduling</span>
+              <span style={{ opacity: 0.4 }}>•</span>
+              <span>Book Today</span>
+              <span style={{ opacity: 0.4 }}>•</span>
+              <span>Results Driven Training</span>
+              <span style={{ opacity: 0.4 }}>•</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* HERO */}
-      <section className="relative flex flex-col sm:flex-row items-center justify-between px-6 sm:px-16 py-12 sm:py-20 gap-10 border-b border-white/10 overflow-hidden">
+      <section className="relative flex flex-col sm:flex-row items-center justify-center px-6 sm:px-16 gap-16 border-b border-white/10 overflow-hidden min-h-[90vh]">
+        {/* BACKGROUND GRID TEXTURE */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(26, 86, 219, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 86, 219, 0.08) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+
         {/* BACKGROUND GLOW */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse at 60% 50%, rgba(26, 86, 219, 0.15) 0%, transparent 70%)",
+              "radial-gradient(ellipse at 40% 50%, rgba(26, 86, 219, 0.15) 0%, transparent 70%)",
           }}
         />
 
         {/* TEXT */}
-        <div className="flex flex-col items-start gap-6 max-w-xl w-full z-10">
+        <div className="flex flex-col items-start justify-center gap-6 max-w-lg w-full z-10 py-12 sm:py-0">
           <p className="text-[#1a56db] uppercase tracking-widest text-xs sm:text-sm font-semibold">
             Learn from Experience. Train with Purpose.
           </p>
@@ -85,7 +141,7 @@ export default function Home() {
 
         {/* PHOTO */}
         <div
-          className="relative w-full sm:w-[420px] h-[350px] sm:h-[500px] rounded-2xl overflow-hidden flex-shrink-0 z-10"
+          className="relative w-full sm:w-[420px] h-[350px] sm:h-[580px] rounded-2xl overflow-hidden flex-shrink-0 z-10"
           style={{
             boxShadow:
               "0 0 30px rgba(26, 86, 219, 0.5), 0 0 60px rgba(26, 86, 219, 0.2)",
@@ -158,6 +214,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+
       {/* PHOTO GALLERY */}
       <section className="px-6 sm:px-16 py-16 border-b border-white/10">
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
@@ -216,6 +273,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* SPONSOR STRIP */}
       <section className="flex flex-col items-center px-6 py-12 border-b border-white/10 gap-8">
         <p className="text-white/40 uppercase tracking-widest text-xs">

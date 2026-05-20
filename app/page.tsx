@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa";
 import { GiBlackBelt, GiTrophy, GiBrain } from "react-icons/gi";
 import Navbar from "./components/Navbar";
+import Testimonials from "./components/Testimonials";
 
 export default function Home() {
   return (
@@ -234,6 +235,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Testimonials />
 
       {/* SPONSOR STRIP */}
       <section className="flex flex-col items-center px-6 py-12 border-b border-white/10 bg-[#050505] gap-8">

@@ -50,7 +50,7 @@ export default function Book() {
           {[
             {
               title: "Private Lesson",
-              price: "$80",
+              price: "$120",
               duration: "1 hour",
               desc: "One on one focused training tailored to your specific goals and skill level.",
               features: [
@@ -62,7 +62,7 @@ export default function Book() {
             },
             {
               title: "Semi-Private",
-              price: "$50",
+              price: "$80",
               duration: "1 hour per person",
               desc: "Train with a partner or small group for a more affordable session with personalized attention.",
               features: [

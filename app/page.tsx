@@ -55,8 +55,7 @@ export default function Home() {
       </div>
 
       {/* HERO */}
-      <section className="relative flex flex-col sm:flex-row items-center justify-center px-6 sm:px-16 gap-2 sm:gap-16 border-b border-white/10 overflow-hidden py-12">
-        {/* BACKGROUND GRID TEXTURE */}
+      <section className="relative flex flex-col sm:flex-row items-center justify-center px-6 sm:px-16 gap-2 sm:gap-16 border-b border-white/10 overflow-hidden py-8 sm:py-16">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -65,8 +64,6 @@ export default function Home() {
             backgroundSize: "60px 60px",
           }}
         />
-
-        {/* BACKGROUND GLOW */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -74,9 +71,7 @@ export default function Home() {
               "radial-gradient(ellipse at 40% 50%, rgba(26, 86, 219, 0.15) 0%, transparent 70%)",
           }}
         />
-
-        {/* TEXT */}
-        <div className="flex flex-col items-start justify-center gap-6 max-w-lg w-full z-10 py-12 sm:py-0">
+        <div className="flex flex-col items-start justify-center gap-5 max-w-lg w-full z-10">
           <p className="text-[#1a56db] uppercase tracking-widest text-xs sm:text-sm font-semibold">
             Learn from Experience. Train with Purpose.
           </p>
@@ -93,19 +88,15 @@ export default function Home() {
             USAF Jiu-Jitsu Ambassador. Multiple IBJJF Open Champion. Pan Ams Gi
             Vice-Champion 2026. Training out of RP BJJ Boerne.
           </p>
-          <div className="flex gap-4 flex-wrap">
-            <a
-              href="/book"
-              className="bg-[#1a56db] hover:bg-[#1e40af] text-white px-8 py-3 rounded-full font-medium transition-colors"
-            >
-              Book a Session
-            </a>
-          </div>
+          <a
+            href="/book"
+            className="bg-[#1a56db] hover:bg-[#1e40af] text-white px-8 py-3 rounded-full font-medium transition-colors"
+          >
+            Book a Session
+          </a>
         </div>
-
-        {/* PHOTO */}
         <div
-          className="relative w-full sm:w-[420px] h-[350px] sm:h-[580px] rounded-2xl overflow-hidden flex-shrink-0 z-10"
+          className="relative w-full sm:w-[420px] h-[320px] sm:h-[580px] rounded-2xl overflow-hidden flex-shrink-0 z-10"
           style={{
             boxShadow:
               "0 0 30px rgba(26, 86, 219, 0.5), 0 0 60px rgba(26, 86, 219, 0.2)",
@@ -132,7 +123,7 @@ export default function Home() {
         ].map((item) => (
           <div
             key={item.label}
-            className="bg-[#080808] flex flex-col items-center justify-center py-10 sm:py-16 px-4 text-center"
+            className="bg-[#0a0a0a] flex flex-col items-center justify-center py-10 sm:py-16 px-4 text-center"
           >
             <span className="text-2xl sm:text-3xl font-bold text-[#1a56db] mb-2">
               {item.stat}
@@ -145,10 +136,13 @@ export default function Home() {
       </section>
 
       {/* ICON CARDS */}
-      <section className="px-6 sm:px-16 py-16 sm:py-24 border-b border-white/10">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
+      <section className="px-6 sm:px-16 py-16 sm:py-24 border-b border-white/10 bg-[#050505]">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">
           What You Will Learn
         </h2>
+        <p className="text-white/40 text-center text-sm mb-12 uppercase tracking-widest">
+          Train with a champion
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
             {
@@ -180,12 +174,15 @@ export default function Home() {
       </section>
 
       {/* PHOTO GALLERY */}
-      <section className="px-6 sm:px-16 py-16 border-b border-white/10">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-12">
+      <section className="px-6 sm:px-16 py-16 border-b border-white/10 bg-black">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">
           On The Mat
         </h2>
+        <p className="text-white/40 text-center text-sm mb-12 uppercase tracking-widest">
+          Competition highlights
+        </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div className="relative h-[300px] rounded-2xl overflow-hidden group">
+          <div className="relative h-[200px] sm:h-[300px] rounded-2xl overflow-hidden group">
             <Image
               src="/images/Cesar_5.jpg"
               alt="Cesar competing on the mat"
@@ -194,11 +191,11 @@ export default function Home() {
               style={{ objectPosition: "20% center" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <p className="absolute bottom-4 left-4 text-xs font-medium text-white/80 uppercase tracking-widest">
+            <p className="absolute bottom-3 left-3 text-xs font-medium text-white/80 uppercase tracking-widest">
               In Action
             </p>
           </div>
-          <div className="relative h-[300px] rounded-2xl overflow-hidden group">
+          <div className="relative h-[200px] sm:h-[300px] rounded-2xl overflow-hidden group">
             <Image
               src="/images/Cesar_4.jpg"
               alt="Cesar hand raised at competition"
@@ -206,11 +203,11 @@ export default function Home() {
               className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <p className="absolute bottom-4 left-4 text-xs font-medium text-white/80 uppercase tracking-widest">
+            <p className="absolute bottom-3 left-3 text-xs font-medium text-white/80 uppercase tracking-widest">
               Victory
             </p>
           </div>
-          <div className="relative h-[300px] rounded-2xl overflow-hidden group">
+          <div className="relative h-[200px] sm:h-[300px] rounded-2xl overflow-hidden group">
             <Image
               src="/images/Cesar_3.jpg"
               alt="Cesar on the podium at Dallas World League"
@@ -219,11 +216,11 @@ export default function Home() {
               style={{ objectPosition: "center 60%" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <p className="absolute bottom-4 left-4 text-xs font-medium text-white/80 uppercase tracking-widest">
+            <p className="absolute bottom-3 left-3 text-xs font-medium text-white/80 uppercase tracking-widest">
               JJ World League Dallas
             </p>
           </div>
-          <div className="relative h-[300px] rounded-2xl overflow-hidden group">
+          <div className="relative h-[200px] sm:h-[300px] rounded-2xl overflow-hidden group">
             <Image
               src="/images/Cesar_1.jpg"
               alt="Cesar at Pan Jiu-Jitsu Championship 2026"
@@ -231,7 +228,7 @@ export default function Home() {
               className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <p className="absolute bottom-4 left-4 text-xs font-medium text-white/80 uppercase tracking-widest">
+            <p className="absolute bottom-3 left-3 text-xs font-medium text-white/80 uppercase tracking-widest">
               Pan Jiu-Jitsu 2026
             </p>
           </div>
@@ -239,7 +236,7 @@ export default function Home() {
       </section>
 
       {/* SPONSOR STRIP */}
-      <section className="flex flex-col items-center px-6 py-12 border-b border-white/10 gap-8">
+      <section className="flex flex-col items-center px-6 py-12 border-b border-white/10 bg-[#050505] gap-8">
         <p className="text-white/40 uppercase tracking-widest text-xs">
           Partners & Affiliations
         </p>
@@ -288,7 +285,7 @@ export default function Home() {
 
       {/* CTA BANNER */}
       <section
-        className="relative px-6 sm:px-16 py-16 sm:py-24 border-b border-white/10 overflow-hidden"
+        className="relative px-6 sm:px-16 py-16 sm:py-24 overflow-hidden"
         style={{
           background: "linear-gradient(135deg, #1a56db 0%, #1e3a8a 100%)",
         }}
@@ -300,7 +297,7 @@ export default function Home() {
               "radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.05) 0%, transparent 60%)",
           }}
         />
-        <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8">
+        <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 max-w-4xl mx-auto">
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-3">
               Ready to Elevate Your Game?
@@ -319,7 +316,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="flex flex-col sm:flex-row items-center justify-between px-6 sm:px-8 py-6 text-white/40 text-sm gap-4">
+      <footer className="flex flex-col sm:flex-row items-center justify-between px-6 sm:px-8 py-6 text-white/40 text-sm gap-4 bg-black border-t border-white/10">
         <span>2026 Cesar Gonzalez Zamora</span>
         <div className="flex items-center gap-6">
           <a
